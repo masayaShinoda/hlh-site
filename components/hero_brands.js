@@ -1,31 +1,34 @@
-import { useState, useEffect } from 'react'
-import { Carousel } from 'react-responsive-carousel'
-
+import Link from 'next/link'
 import styles from '../styles/hero.module.scss'
 
 export default function HeroBrands({ data }) {
-    // const defaultBrands = [
-    //     {},
-    //     {},
-    //     {},
-    // ]
 
-    // const [brands, setBrands] = useState({ defaultBrands })
-    // useEffect(() => {
-    //     if(data) {
-    //         setBrands(data)
-    //         console.log(data)
-    //     } else {
-    //         setBrands(defaultBrands)
-    //     }
-    // }, [data])
+    function scroll_div(direction, element) {
+        // target = document.getElementById(element)
+        if(direction === "left") {
+            document.getElementById(element).scrollLeft -= 240;
+        }
+        if(direction === "right") {
+            document.getElementById(element).scrollLeft += 240;
+        }
+    }
+    
+    
 
     return (
-        <div className={styles.hero_products_container}>
-            <div className={styles.hero_products_content 
-                + " animate__animated animate__backInRight animate__fast"}>
-                <h2>Products</h2>
-                <div className={styles.brands_slideshow}>
+    <div className={styles.hero_products_container}>
+        <div className={styles.hero_products_content 
+            + " animate__animated animate__backInRight animate__fast"}>
+            <h2>Products</h2>
+            <div className={styles.brands_slideshow_container}>
+                <button 
+                onClick={() => scroll_div("left", "brands_slideshow")}
+                className={styles.hero_products_arrow_left}>
+                <i className="arrow arrow_left" />
+                </button>
+                <div 
+                id="brands_slideshow"
+                className={styles.brands_slideshow}>
                 {data && data.map(i => 
                     <img
                     loading="lazy"
@@ -33,8 +36,23 @@ export default function HeroBrands({ data }) {
                     src={i.brandLogo.url} alt={i.brandName} />
                 )}
                 </div>
+                <button 
+                onClick={() => scroll_div("right", "brands_slideshow")}
+                className={styles.hero_products_arrow_right}>
+                <i className="arrow arrow_right" />
+                </button>
             </div>
-
+            <div
+            style={{display: "flex", justifyContent: "center", width: "100%", padding: "1.5rem 0"}}
+            >
+                <Link href="/">
+                    <a
+                    className="link_dotted">
+                    See all available brands</a>
+                </Link>
+            </div>
         </div>
+
+    </div>
     )
 }

@@ -140,6 +140,14 @@
             text-align:center;
         }
 
+        .brands_slideshow_container {
+            display: flex;
+            width: 100%;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+
         .brands_slideshow {
             width: 100%;
             padding: 2.5% 0;
@@ -150,8 +158,6 @@
 
             scrollbar-width: thin;
 
-   
-            
             img {
                 height: 9rem;
                 width: 12rem;
@@ -159,6 +165,20 @@
                 max-width: 12rem;
                 object-fit: contain;
                 margin: 0 2.5rem;
+
+                @media #{$mq-xsmall} {
+                    height: 6rem;
+                    width: 8rem;
+                    max-height: 6rem;
+                    max-width: 8rem;
+                    margin: 0 1.8rem;
+                }
+            }
+            img:first-of-type {
+                margin-left: 0;
+            }
+            img:last-of-type {
+                margin-right: 0;
             }
         }
         /* width */
@@ -183,5 +203,24 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #555; 
         }
+
+        .hero_products_arrow_left, .hero_products_arrow_right {
+            background: 0;
+            padding: 3.25rem 1rem;
+            cursor: pointer;
+        }
+        .hero_products_arrow_left:hover, .hero_products_arrow_right:hover {
+            background: rgba(0,0,0,.0325);
+
+        }
+        .hero_products_arrow_left {
+            top: 0;
+            left: 0;
+        }
+        .hero_products_arrow_right {
+            top: 0;
+            right: 0;
+        }
     }
+    
 }

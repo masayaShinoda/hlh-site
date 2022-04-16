@@ -39,13 +39,13 @@ export default function Hero({ data }) {
                         <a 
                         href={hero.actionLink}
                         className="action_btn"
-                        >{hero.actionButtonText} ➡</a> 
-                    : null}
-                    
+                        >{hero.actionButtonText} 🡒</a> 
+                    : null}                    
                 </div>
                 <div className={styles.hero_gallery}>
                     {hero.gallery ? 
-                        <Carousel 
+                        <Carousel
+                        showThumbs={false}
                         showStatus={false}
                         autoPlay
                         infiniteLoop
