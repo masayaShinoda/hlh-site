@@ -2,7 +2,7 @@
 
 .hero_container {
     width: 100%;
-    min-height: 35rem; //debug
+    // min-height: 35rem; //debug
     background: $snow;
     padding: 2.5% 0;
     display: flex;
@@ -18,6 +18,7 @@
             align-items: flex-start;
             justify-content: flex-start;
             padding: 0 5%;
+            // border: 1px solid red; //debug
         }
         @media #{$mq-small} {
             max-width: $max-content-tablet;
@@ -41,6 +42,10 @@
             justify-content: center;
             align-items: flex-start;
             
+            @media #{$mq-xsmall} {
+                // border: 1px solid green; //debug
+                padding: 2.5rem 0;
+            }
             @media #{$mq-small} {
                 width: 70%;
                 max-width: 70%;
@@ -75,8 +80,16 @@
         
         .hero_gallery {
             @media #{$mq-xsmall} {
-                max-height: 25rem;
-                // border: 2px solid red; //debug
+                // display: flex;
+                // justify-content: center;
+                // align-items: center;
+
+                
+                max-height: 30rem;
+                // border: 2px solid orange; //debug
+                img {
+                    max-height: 30rem;
+                }
             }
             @media #{$mq-small} {
                 max-width: 80%;
@@ -105,7 +118,7 @@
             flex-direction: column-reverse;
             align-items: flex-start;
             justify-content: flex-start;
-            padding: 0 5%;
+            padding: $content-padding-mobile;
         }
         @media #{$mq-small} {
             max-width: $max-content-tablet;
@@ -135,6 +148,10 @@
             overflow-x: scroll;
             overflow-y: hidden;
 
+            scrollbar-width: thin;
+
+   
+            
             img {
                 height: 9rem;
                 width: 12rem;
@@ -143,6 +160,28 @@
                 object-fit: contain;
                 margin: 0 2.5rem;
             }
+        }
+        /* width */
+        .brands_slideshow::-webkit-scrollbar {
+            // width: 5px;
+            height: 8px;
+        }
+    
+        /* Track */
+        .brands_slideshow::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+    
+        /* Handle */
+        .brands_slideshow::-webkit-scrollbar-thumb {
+            background: #999;
+            border-radius: 2px;
+            // bordeR: 1px solid red; //debug
+        }
+    
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555; 
         }
     }
 }
