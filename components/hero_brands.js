@@ -4,16 +4,13 @@ import styles from '../styles/hero.module.scss'
 export default function HeroBrands({ data }) {
 
     function scroll_div(direction, element) {
-        // target = document.getElementById(element)
         if(direction === "left") {
             document.getElementById(element).scrollLeft -= 240;
         }
         if(direction === "right") {
             document.getElementById(element).scrollLeft += 240;
         }
-    }
-    
-    
+    }    
 
     return (
     <div className={styles.hero_products_container}>

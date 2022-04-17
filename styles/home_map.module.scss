@@ -1,0 +1,80 @@
+@import './_variables.scss';
+
+.home_map_container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 2.5% 0;
+    @media #{$mq-xsmall} {
+        padding: 10% 0;
+    }
+    .home_map_content {
+        display: flex; flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 auto;
+        // border: 1px solid red;
+        @media #{$mq-xsmall} {
+            width: 100%;
+            max-width: 100%;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            padding: $content-padding-mobile;
+        }
+        @media #{$mq-small} {
+            width: 100%;
+            max-width: $max-content-tablet;
+            padding: $content-padding-tablet;
+            // border: 1px solid red; //debug
+        }
+        @media #{$mq-medium} {
+            width: 65%;
+            max-width: $max-content-desktop;
+            padding: $content-padding-desktop;
+        }
+        .text_container {
+            max-width: 40%;
+            display: flex; 
+            @media #{$mq-xsmall} {
+                width: 100%; max-width: 100%;
+                flex-direction: column; align-items: center;
+            }
+            @media #{$mq-small} {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            @media #{$mq-medium} {
+                flex-direction: row;
+                align-items: center;
+            }
+            > img {
+                width: 6.5rem;
+                object-fit: contain;
+                @media #{$mq-xsmall} {
+                    width: 5rem;
+                }
+            }
+            > span {
+                @media #{$mq-xsmall} {
+                    margin: 1.8rem 0;
+                    display: inline-block;
+                    text-align: center;
+                    width: 100%;
+                }
+                @media #{$mq-small} {
+                    margin: 1.8rem 2.5rem 0 0;
+                }
+                @media #{$mq-medium} {
+                    margin: 0 0 0 1.8rem;
+                }
+            }
+        }
+        .map_embed {
+            @media #{$mq-xsmall} {
+                max-width: 100% !important;
+                // border: 1px solid red !important; //debug
+            }
+        }
+    }
+}

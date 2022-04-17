@@ -109,7 +109,6 @@
     display: flex;
     padding: 2.5% 0;
     width: 100%;
-    
     .hero_products_content {
         width: 100%;
         margin: 0 auto;
@@ -157,6 +156,8 @@
             overflow-y: hidden;
 
             scrollbar-width: thin;
+
+            @media #{$mq-xsmall} {padding: 7.5% 0}
 
             img {
                 height: 9rem;

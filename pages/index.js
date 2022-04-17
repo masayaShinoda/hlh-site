@@ -1,12 +1,16 @@
 import Layout from '../components/layout'
 import Hero from '../components/hero'
 import HeroBrands from '../components/hero_brands'
+import Categories from '../components/categories'
+import HomeMap from '../components/home_map'
 
 export default function Home({ herosData }) {
   return (
     <Layout>
       <Hero data={herosData.data.heroSection} />
       <HeroBrands data={herosData.data.allProductBrands} />
+      <Categories data={herosData.data.allProductCategories} />
+      <HomeMap />
     </Layout>
   )
 }
@@ -47,6 +51,18 @@ export async function getStaticProps() {
               id
               brandName
               brandLogo {
+                url
+              }
+            }
+            allProductCategories {
+              id
+              category
+              thumbnail {
+                id
+                url
+              }
+              icon {
+                id
                 url
               }
             }
