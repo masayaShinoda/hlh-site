@@ -14,8 +14,7 @@ export default function HeroBrands({ data }) {
 
     return (
     <div className={styles.hero_products_container}>
-        <div className={styles.hero_products_content 
-            + " animate__animated animate__backInRight animate__fast"}>
+        <div className={styles.hero_products_content}>
             <h2>Products</h2>
             <div className={styles.brands_slideshow_container}>
                 <button 
@@ -30,7 +29,8 @@ export default function HeroBrands({ data }) {
                     <img
                     loading="lazy"
                     key={i.id}
-                    src={i.brandLogo.url} alt={i.brandName} />
+                    src={i.brandLogo.url} alt={i.brandName}
+                    className={" animate__animated animate__slideInRight animate__delay-2s"} />
                 )}
                 </div>
                 <button 

@@ -21,6 +21,7 @@ h1, h2, h3 {
   div, span, p, a, ul, ol, q, blockquote {
     font-size: 1.6rem;
     line-height: 1.6;
+    color: $black;
   }
   h1, h2 {max-width: 30ch;}
   span, p, a, ul, ol, q, blockquote {
@@ -68,17 +69,18 @@ h1, h2, h3 {
   // }
   
   main {
-    position: absolute;
-    top: 0;
+    // position: absolute;
+    // top: 0;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
+    min-height: 50rem; //debug
     @media #{$mq-xsmall} {
       top: $mobile_nav_height;
     }
     @media #{$mq-small} {
-      top: $desktop_nav_height;
+      margin-top: $desktop_nav_height;
     }
   }
 

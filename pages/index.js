@@ -4,12 +4,12 @@ import HeroBrands from '../components/hero_brands'
 import Categories from '../components/categories'
 import HomeMap from '../components/home_map'
 
-export default function Home({ herosData }) {
+function Home({ homeData }) {
   return (
     <Layout>
-      <Hero data={herosData.data.heroSection} />
-      <HeroBrands data={herosData.data.allProductBrands} />
-      <Categories data={herosData.data.allProductCategories} />
+      <Hero data={homeData.data.heroSection} />
+      <HeroBrands data={homeData.data.allProductBrands} />
+      <Categories data={homeData.data.allProductCategories} />
       <HomeMap />
     </Layout>
   )
@@ -70,12 +70,13 @@ export async function getStaticProps() {
         }),
       }
   )
-  const herosData = await res.json()
-  // By returning { props: { posts } }, the Blog component
-  // will receive `posts` as a prop at build time
+  const homeData = await res.json()
+  
   return {
     props: {
-      herosData,
+      homeData,
     },
   }
 }
+
+export default Home

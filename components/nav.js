@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import styles from '../styles/nav.module.scss'
 
-export default function Nav() {
+export default function Nav({ activePage }) {
 
     const logos = {
         full: '/images/SVG/hlh-logo-no-bg.svg',
@@ -88,7 +88,7 @@ export default function Nav() {
         <div className={styles.nav_content} id="nav_content">
             <div className={styles.logo_container}>
                 <Link href="/">
-                    <a>
+                    <a tabIndex={1}>
                     <img 
                     src={logos.full}
                     // width="80" height="80"
@@ -104,8 +104,9 @@ export default function Nav() {
                 </Link>
             </div>
             <nav id="nav_items">
-                <Link href="/">
-                <a>
+                <Link href="/products">
+                <a className={activePage === "products" ? styles.active : null} tabIndex={2}>
+                {/* <a style={activePage === "products" ? {color: styles.blue} : null}> */}
                     <Image
                     src={icons.products}
                     width="16" height="16"
@@ -116,7 +117,7 @@ export default function Nav() {
                 </a>
                 </Link>
                 <Link href="/">
-                <a>
+                <a tabIndex={3}>
                     <Image
                     src={icons.contact}
                     width="16" height="16"
@@ -127,7 +128,7 @@ export default function Nav() {
                 </a>
                 </Link>
                 <Link href="/">
-                <a>
+                <a tabIndex={4}>
                     <Image
                     src={icons.about}
                     width="16" height="16"
@@ -198,7 +199,7 @@ export default function Nav() {
             />
         </button>
         <nav>
-            <Link href="/">
+            <Link href="/products">
                 Products
             </Link>
             <Link href="/">

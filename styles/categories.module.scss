@@ -50,6 +50,8 @@
             .box_category {
                 display: flex; flex-direction: column;
                 width: 28%; max-width: 28%;
+                margin: 0;
+                text-decoration: none;
                 margin-bottom: 3.25rem;
                 box-shadow: 1px 1px 5px rgba(0,0,0,.325);
                 // border: 1px solid red; //debug

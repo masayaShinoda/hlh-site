@@ -1,17 +1,24 @@
+import Link from 'next/link'
 import styles from '../styles/categories.module.scss'
 
 export default function Categories({ data }) {
     const thumbnail_alt = "/images/SVG/img-placeholder.svg"
     // console.log(data)
-    
+
+
     return (
     <section className={styles.categories_container}>
         <div className={styles.categories_content}>
             <h2>Categories</h2>
             <div className={styles.grid_category}>
             {data && data.map(i => (
-                <div
+                <Link href={{
+                    pathname: '/products',
+                    query: { category: i.category },
+                }}
                 key={i.id}
+                >
+                <a
                 className={styles.box_category}
                 >
                     {i.thumbnail ? 
@@ -22,7 +29,8 @@ export default function Categories({ data }) {
                         <img src={i.icon.url} alt={i.category + " icon"} /> : null}
                         <h3>{i.category}</h3>
                     </div>
-                </div>
+                </a>
+                </Link>
             ))}
             </div>
         </div>
