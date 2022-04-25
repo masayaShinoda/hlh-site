@@ -4,21 +4,23 @@ import Layout from '../components/layout'
 import styles from '../styles/products.module.scss'
 
 function Products({ productsData }) {
-    // const router = useRouter()
-    // const {
-    //   query: { category },
-    // } = router
+    const router = useRouter()
+    const {
+      query: { category },
+    } = router
 
     const [activeCateg, setActiveCateg] = useState(null)
 
-    // useEffect(() => {
-    //     setActiveCateg(category)
-    // }, [category])
+    useEffect(() => {
+        if(typeof category !== "undefined")
+            setActiveCateg(category)
+    }, [category])
 
     const handleChange = e => {
         const target = e.target
         if(target.checked) {
             setActiveCateg(target.value)
+            router.push(`/products/?category=${encodeURIComponent(target.value)}`, undefined, { shallow: true })
         }
     }
     
@@ -30,7 +32,8 @@ function Products({ productsData }) {
                 <label>Select product category to display.</label>
             </div>
             <div className={styles.categ_radio_section}>
-            {productsData && productsData.data.allProductCategories.map((i, order) => 
+            {productsData.data.allProductCategories ? 
+            productsData.data.allProductCategories.map((i, order) => 
             {if(i.available === true) 
             return <div className={styles.radio_option_display} key={i.id}>
                 <label htmlFor={i.id}>
@@ -54,13 +57,13 @@ function Products({ productsData }) {
                         <span>{i.category}</span>
                 </label>
             </div>}
-            )}
+            ) : <span>...</span>}
             </div>
             <div className={styles.products_listing_container}>
                 <h2>{activeCateg ? activeCateg : "Choose a category."}</h2>
-                {activeCateg ? 
+                {activeCateg ?
                 <div className={styles.products_listing_grid}>
-                    {productsData && 
+                    {productsData.data.allProductListings ? 
                     productsData.data.allProductListings.map(i => {
                         if(i.category.category === activeCateg && i.available === true) {
                             return <>
@@ -77,7 +80,7 @@ function Products({ productsData }) {
                             </>
                         }
                     }
-                    )}
+                    ) : <span>...</span>}
                 </div>
                 : null}
             </div>
