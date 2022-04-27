@@ -11,9 +11,28 @@ function Products({ productsData }) {
 
     const [activeCateg, setActiveCateg] = useState(null)
 
+    function display_product_status_categ() {
+        if(activeCateg) {
+            const products_listing_grid = document.getElementById("products_listing_grid")
+            const products_listing_status = document.getElementById("products_listing_status")
+
+            if(products_listing_grid.childElementCount < 1) {
+                products_listing_status.innerText = "No products available in this category."
+            } else {
+                products_listing_status.innerText = ""
+            }
+        }
+    } 
+    
     useEffect(() => {
+        display_product_status_categ()
+    }, [category, productsData])
+    
+    useEffect(() => {
+
         if(typeof category !== "undefined")
             setActiveCateg(category)
+        
     }, [category])
 
     const handleChange = e => {
@@ -61,13 +80,13 @@ function Products({ productsData }) {
             </div>
             <div className={styles.products_listing_container}>
                 <h2>{activeCateg ? activeCateg : "Choose a category."}</h2>
+                <span id="products_listing_status" style={{margin: 0, padding: 0, color: "#666"}}></span>
                 {activeCateg ?
-                <div className={styles.products_listing_grid}>
-                    {productsData.data.allProductListings ? 
+                <div className={styles.products_listing_grid} id="products_listing_grid">
+                    {productsData.data.allProductListings ?
                     productsData.data.allProductListings.map(i => {
                         if(i.category.category === activeCateg && i.available === true) {
-                            return <>
-                            <div className={styles.product_box} key={i.id}>
+                            return <div className={styles.product_box} key={i.id}>
                                 <img 
                                 className={styles.product_thumbnail}
                                 src={i.photos[0]["url"]} alt={`Photo of ${i.name}`} loading="lazy" />
@@ -77,8 +96,8 @@ function Products({ productsData }) {
                                     <p className={styles.price}>{i.price ? `$${i.price}` : null}</p>
                                 </div>
                             </div>
-                            </>
                         }
+                        
                     }
                     ) : <span>...</span>}
                 </div>

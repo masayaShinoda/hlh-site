@@ -37,6 +37,11 @@
                 line-height: 1;
                 font-size: 1.24rem;
             }
+            @media #{$mq-xsmall} {
+                flex-direction: column;
+                align-items: flex-start;
+
+            }
         }
         .categ_radio_section {
             display: flex;
