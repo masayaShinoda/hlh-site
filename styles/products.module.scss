@@ -1,7 +1,6 @@
 @import './_variables.scss';
 
 .products_page_container {
-    
     display: flex; flex-direction: column;
     width: 100%;
     padding: 2.5rem 0;
@@ -151,8 +150,9 @@
                 width: 22%; max-width: 22%;
                 border: 1px solid #bbb;
                 // box-shadow: 0 .1rem .25rem .005rem rgba(0, 0, 0, 0.15);
+                margin: 0;
                 margin-bottom: 3.25rem;
-
+                text-decoration: none;
                 // border: 1px solid blue; //debug
                 @media #{$mq-xsmall} {
                     min-width: 48%;

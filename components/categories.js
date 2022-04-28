@@ -16,8 +16,7 @@ export default function Categories({ data }) {
                     pathname: '/products',
                     query: { category: i.category },
                 }}
-                key={i.id}
-                >
+                key={i.id}>
                 <a
                 className={styles.box_category}
                 >

@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
+import Link from 'next/link'
 import Layout from '../components/layout'
 import styles from '../styles/products.module.scss'
 
@@ -27,7 +28,7 @@ function Products({ productsData }) {
     useEffect(() => {
         display_product_status_categ()
     }, [category, productsData])
-    
+
     useEffect(() => {
 
         if(typeof category !== "undefined")
@@ -43,7 +44,7 @@ function Products({ productsData }) {
         }
     }
     
-    return <Layout activePage={"products"}>
+    return <Layout activePage={"products"} page_title={"Products"}>
     <div className={styles.products_page_container}>
         <div className={styles.products_page_content}>
             <div className={styles.categ_upper_section}>
@@ -86,7 +87,8 @@ function Products({ productsData }) {
                     {productsData.data.allProductListings ?
                     productsData.data.allProductListings.map(i => {
                         if(i.category.category === activeCateg && i.available === true) {
-                            return <div className={styles.product_box} key={i.id}>
+                            return <Link key={i.id} href={`/product/${i.id}`}>
+                            <a className={styles.product_box}>
                                 <img 
                                 className={styles.product_thumbnail}
                                 src={i.photos[0]["url"]} alt={`Photo of ${i.name}`} loading="lazy" />
@@ -95,7 +97,7 @@ function Products({ productsData }) {
                                     <p className={styles.brand}>{i.brand ? i.brand.brandName : null}</p>
                                     <p className={styles.price}>{i.price ? `$${i.price}` : null}</p>
                                 </div>
-                            </div>
+                            </a></Link>
                         }
                         
                     }
