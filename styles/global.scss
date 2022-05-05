@@ -180,3 +180,9 @@ h1, h2, h3 {
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
 }
+
+.fb_dialog.fb_dialog_advanced iframe {
+  right: auto !important;
+  left: 2rem;
+  bottom: 2rem !important;
+}
