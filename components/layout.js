@@ -9,9 +9,9 @@ export default function Layout({ children, activePage, page_title }) {
         <>
             <LayoutHead page_title={page_title} />
             <Nav activePage={activePage} />
+            <MessengerPlugin />
             <main>
                 {children}
-                <MessengerPlugin />
             </main>
             <Footer />
         </>
