@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -116,7 +117,7 @@ export default function Nav({ activePage }) {
                     Products
                 </a>
                 </Link>
-                <Link href="/">
+                <Link href="/contact">
                 <a tabIndex={3}>
                     <Image
                     src={icons.contact}
@@ -127,7 +128,7 @@ export default function Nav({ activePage }) {
                     Contact
                 </a>
                 </Link>
-                <Link href="/">
+                <Link href="/about">
                 <a tabIndex={4}>
                     <Image
                     src={icons.about}
@@ -202,10 +203,10 @@ export default function Nav({ activePage }) {
             <Link href="/products">
                 Products
             </Link>
-            <Link href="/">
+            <Link href="/contact">
                 Contact
             </Link>
-            <Link href="/">
+            <Link href="/about">
                 About
             </Link>
         </nav>

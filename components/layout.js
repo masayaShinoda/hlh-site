@@ -1,6 +1,7 @@
 import LayoutHead from './layout_head'
 import Nav from './nav'
 import Footer from './footer'
+import MessengerPlugin from './messenger_plugin'
 
 export default function Layout({ children, activePage, page_title }) {
 
@@ -11,6 +12,7 @@ export default function Layout({ children, activePage, page_title }) {
             <main>
                 {children}
             </main>
+            <MessengerPlugin />
             <Footer />
         </>
     )

@@ -13,22 +13,19 @@ function Product({ productData }) {
     const currency = "$"
 
 
-    return (
-        <Layout>
-            <div style={{padding: `5rem 5%`}}>
-                <p>{id}</p>
-                {product_data && <>
-                    <h2>{product_data.name}</h2>
-                    <p>{product_data.category.category}</p>
-                    <p>{currency}{product_data.price}</p>
-                    <p>{product_data.brand.brandName}</p>
-                    <>{parse(product_data.description)}</>
-                    <img src={product_data.photos[0].url} alt={`Photo of ${product_data.name}`} />
-                
-                </>}
-            </div>
-        </Layout>
-    )
+    return <Layout>
+        <div style={{padding: `5rem 5%`}}>
+            <p>{id}</p>
+            {product_data && <>
+                <h2>{product_data.name}</h2>
+                <p>{product_data.category.category}</p>
+                <p>{currency}{product_data.price}</p>
+                <p>{product_data.brand.brandName}</p>
+                <>{parse(product_data.description)}</>
+                <img src={product_data.photos[0].url} alt={`Photo of ${product_data.name}`} />
+            </>}
+        </div>
+    </Layout>
 }
 
 

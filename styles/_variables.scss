@@ -43,3 +43,9 @@ $desktop_nav_height_mini: 5.4rem;
 
 $desktop_nav_padding: 3.25rem 0 1.25rem 0;
 $desktop_nav_content_padding: 0 5%;
+
+:export {
+    blue_css_filter: $blue_css_filter;
+    blue: $blue;
+    dark_blue: $dark_blue;
+}
