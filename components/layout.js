@@ -11,9 +11,9 @@ export default function Layout({ children, activePage, page_title }) {
             <Nav activePage={activePage} />
             <main>
                 {children}
+                <MessengerPlugin />
             </main>
             <Footer />
-            <MessengerPlugin />
         </>
     )
 }
