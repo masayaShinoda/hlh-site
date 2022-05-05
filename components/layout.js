@@ -12,8 +12,8 @@ export default function Layout({ children, activePage, page_title }) {
             <main>
                 {children}
             </main>
-            <MessengerPlugin />
             <Footer />
+            <MessengerPlugin />
         </>
     )
 }
