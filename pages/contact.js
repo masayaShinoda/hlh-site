@@ -3,12 +3,12 @@ import Layout from '../components/layout'
 import styles from '../styles/contact.module.scss'
 
 function Contact({ contactData }) {
-    const data = contactData.data.allContactInformations[0]
+    const data = contactData.data.contactInformation
 
     const icons = {
         telephone: '/icons/old-typical-phone.svg',
         mobile: '/icons/phone-square.svg',
-        fbook: '/icons/facebook-round-color.svg',
+        fbook: '/icons/facebook-round-black.svg',
         email: '/icons/envelope.svg'
     }
 
@@ -73,7 +73,7 @@ export async function getStaticProps() {
           },
           body: JSON.stringify({
             query: `{
-                allContactInformations {
+                contactInformation {
                     location
                     mobile
                     mobileAdditional
@@ -87,7 +87,7 @@ export async function getStaticProps() {
         }
     )
     const contactData = await res.json()
-    
+
     return {
       props: {
         contactData,
