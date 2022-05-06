@@ -9,6 +9,5 @@ export default function MessengerPlugin() {
         themeColor={styles.blue}
         bottomSpacing={24}
     />
-    // <div className={styles.messenger_plugin_container}>
     
 }
