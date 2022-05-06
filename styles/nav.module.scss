@@ -233,6 +233,12 @@
     }
 }
 
+.messenger_plugin_container {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+}
+
 // Export the color palette to make it accessible to JS
 :export {
     blue_css_filter: $blue_css_filter;
