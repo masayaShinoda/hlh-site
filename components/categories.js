@@ -3,8 +3,6 @@ import styles from '../styles/categories.module.scss'
 
 export default function Categories({ data }) {
     const thumbnail_alt = "/images/SVG/img-placeholder.svg"
-    // console.log(data)
-
 
     return (
     <section className={styles.categories_container}>

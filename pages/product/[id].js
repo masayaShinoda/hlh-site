@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import Layout from '../../components/layout'
 import { useRouter } from 'next/router'
 import parse from 'html-react-parser'
@@ -15,6 +16,9 @@ function Product({ productData }) {
     const product_data = productData.data.allProductListings[0]
     // console.log(product_data.description)
 
+    const icons = {
+        messenger: "/icons/facebook-messenger.svg"
+    }
     const currency = "$"
 
     return <Layout>
@@ -23,9 +27,14 @@ function Product({ productData }) {
             {product_data && <div className={styles.product_details}>
                 <div className={styles.details_container}>
                     <span className={styles.categ_brand_section}>
-                        <p className={styles.category}>
+                    <Link href={{
+                        pathname: '/products',
+                        query: { category: product_data.category.category },
+                    }}>
+                        <a className={styles.category}>
                             {product_data.category.category}
-                        </p>
+                        </a>
+                    </Link>
                         <img
                         className={styles.brandLogo} 
                         src={product_data.brand.brandLogo.url} 
@@ -36,13 +45,17 @@ function Product({ productData }) {
                         {parse(product_data.description)}
                     </span>
                     <span className={styles.price_action_section}>
+                        {product_data.price ? 
                         <p className={styles.price}>
                             {currency}{product_data.price}
-                        </p>
+                        </p> : null}
                         <button
                         className="action_btn"
-                        onClick={() => {showMessenger(true)}}>
-                            Send Message
+                        onClick={() => {showMesenger(true)}}>
+                            <img 
+                            src={icons.messenger} alt="Messenger Logo"
+                            width="16" height="16" />
+                            <span>Send Message</span>
                         </button>
                     </span>
                 </div>

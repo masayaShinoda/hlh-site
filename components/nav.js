@@ -173,9 +173,10 @@ export default function Nav({ activePage }) {
                 />
             </Link>
         </div>
-        <button 
+        <button
         aria-label="Search"
-        className={styles.mobile_nav_btn}>
+        className={styles.mobile_nav_btn}
+        style={{opacity: 0}}>
             <Image 
             src={icons.search}
             alt="Search"
