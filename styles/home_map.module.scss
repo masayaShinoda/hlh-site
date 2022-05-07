@@ -74,11 +74,16 @@
                 }
             }
         }
-        .map_embed {
-            @media #{$mq-xsmall} {
-                max-width: 100% !important;
-                // border: 1px solid red !important; //debug
-            }
-        }
+    }
+}
+.map_embed {
+    @media #{$mq-xsmall} {
+        max-width: 100% !important;
+        // border: 1px solid red !important; //debug
+    }
+    @media #{$mq-small} {
+        min-width: 40vw !important;
+        width: 40vw !important;
+        // outline: 1px solid red; //deubg
     }
 }

@@ -49,8 +49,7 @@ export default function Hero({ data }) {
                         showStatus={false}
                         autoPlay
                         infiniteLoop
-                        interval={4000}
-                        >
+                        interval={4000}>
                         {hero.gallery.map(i => 
                             <Image
                             key={i.id}

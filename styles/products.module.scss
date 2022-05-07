@@ -255,6 +255,105 @@
 }
 
 
+// individual product page
+.product_page_container {
+    display: flex; flex-direction: column;
+    width: 100%;
+    padding: 2.5rem 0;
+    @media #{$mq-xsmall} {
+        margin-top: 10rem;
+    }
+
+    .product_page_content {
+        width: 100%;
+        margin: 0 auto;
+        
+        @media #{$mq-xsmall} {
+            padding: 5%;
+        }
+        @media #{$mq-small} {
+            // padding: $content-padding-tablet;
+            max-width: $max-content-tablet;
+            padding: 5rem 2rem;
+        }
+        @media #{$mq-medium} {
+            // padding: $content-padding-desktop;
+            max-width: $max-content-desktop;
+        }
+
+        .product_details {
+            display: flex; justify-content: space-between;
+            flex-direction: row-reverse;
+            width: 100%;
+
+            @media #{$mq-xsmall} {
+                flex-direction: column-reverse;
+
+            }
+            
+            .details_container {
+                display: flex; flex-direction: column;
+                align-items: flex-start;
+                h1 {
+                    margin: 1.5rem 0 2.5rem 0;
+                }
+                .categ_brand_section {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    width: 100%;
+                    margin: 0;
+                    // align-items: flex-start;
+                    // flex-direction: column;
+                }
+
+                .category {color: #666; font-size: 1.4rem; margin: 0;}
+                .description {margin: 0;}
+                .brandLogo {
+                    width: 12rem;
+                    object-fit: contain;
+                }
+                
+                .price_action_section {
+                    display: flex; align-items: center;
+                    // justify-content: space-between;
+                    @media #{$mq-xsmall} {
+                        width: 100%;
+                        // flex-direction: row-reverse;
+                        justify-content: space-between;
+                    }
+                    .price {
+                        font-size: 2.1rem; font-weight: 600;
+                        margin-right: 2rem;
+                        @media #{$mq-xsmall} {
+                            margin-right: 2.5rem;
+                            // margin-left: 2.5rem;
+                        }
+                    }
+                }
+                button:hover {
+                    cursor: pointer;
+                }
+                
+            }
+
+            @media #{$mq-small} {
+                .details_container {
+                    padding: 0 5rem;
+                    width: 50%;
+                    // outline: 1px solid red; //debug
+                }
+                .gallery_container {
+                    width: 50%;
+                }
+
+            }
+        }
+    }
+    
+}
+
+
 :export {
     blue: $blue;
 }
