@@ -118,7 +118,7 @@ export default function Nav({ activePage }) {
                 </a>
                 </Link>
                 <Link href="/contact">
-                <a tabIndex={3}>
+                <a className={activePage === "contact" ? styles.active : null} tabIndex={3}>
                     <Image
                     src={icons.contact}
                     width="16" height="16"
@@ -129,7 +129,7 @@ export default function Nav({ activePage }) {
                 </a>
                 </Link>
                 <Link href="/about">
-                <a tabIndex={4}>
+                <a className={activePage === "about" ? styles.active : null} tabIndex={4}>
                     <Image
                     src={icons.about}
                     width="16" height="16"

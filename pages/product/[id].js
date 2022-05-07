@@ -54,7 +54,7 @@ export async function getStaticPaths() {
 
     const data = await res.json()
 
-    console.log(data.data)
+    // console.log(data.data)
 
     const paths = data && data.data.allProductListings.map(product => {
         return {

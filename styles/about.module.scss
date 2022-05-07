@@ -1,0 +1,99 @@
+@import './_variables.scss';
+
+.about_page_container {    
+    display: flex; flex-direction: column;
+    width: 100%;
+    padding: 2.5rem 0;
+    @media #{$mq-xsmall} {
+        margin-top: 10rem;
+    }
+    
+    .about_page_content {
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column; align-items: center;
+        // justify-content: space-between;
+        // align-items: center;
+        
+        @media #{$mq-xsmall} {
+            padding: 5%;
+        }
+        @media #{$mq-small} {
+            // padding: $content-padding-tablet;
+            max-width: $max-content-tablet;
+            padding: 5rem 2rem;
+            
+
+            h1, h2 {
+                // max-width: fit-content;
+            }
+            p {
+                max-width: 60ch;
+                text-align: center;
+                margin: 0 0 1.5rem 0;
+            }
+        }
+        @media #{$mq-medium} {
+            padding: $content-padding-desktop;
+            max-width: $max-content-desktop;
+        }
+
+        .text_content {
+            display: flex; flex-direction: column; 
+            align-items: center;
+            // width: 50%;
+        }
+        // .aboutCoverPhoto {
+        //     width: 50%;
+        //     object-fit: contain;
+        // }
+    }
+
+
+    .brand_logos_grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+        width: 100%;
+        max-width: 100%;
+        height: 100%;
+        padding: 5% 0;
+        // border: 2px solid red; //debug
+
+        @media #{$mq-xsmall} {
+            padding: 7.5% 0;
+            justify-content: space-between;
+            
+        }
+
+        img {
+            height: 6rem;
+            width: 8rem;
+            max-height: 6rem;
+            max-width: 8rem;
+            object-fit: contain;
+            margin: 1rem 0;
+            padding: 0;
+            // margin: 1rem 2.5rem;
+            // outline: 1px solid blue; //debug
+
+            @media #{$mq-xsmall} {
+                height: 7.5rem;
+                width: 10rem;
+                max-height: 7.5rem;
+                max-width: 10rem;
+                margin: 0;
+                padding: 1rem 0;
+                // margin: 1rem;
+            }
+        }
+        img:nth-of-type(2n), img:nth-of-type(2n - 1) {
+            margin-left: 1.5rem;
+            @media #{$mq-xsmall} {
+                margin: 0;
+            }
+        }
+    }
+}
