@@ -1,4 +1,5 @@
 @import './_variables.scss';
+@import './nav.module.scss';
 
 html {
     font-size: 62.5%;
@@ -6,23 +7,26 @@ html {
 }
 
 h1, h2, h3 {
-    font-family: $head, serif;
-  } 
+  font-family: $head, sans-serif;
+  color: $dark_blue;
+} 
   
   div, span, p, a, ul, ol, small, q, blockquote {
-    font-family: $body, serif;
+    font-family: $body, sans-serif;
   }
   
   h1 {font-size: 3.6rem; line-height: 1.1; margin-bottom: 1.5rem;}
   h2 {font-size: 2.4rem; line-height: 1.24; margin: 1.25rem 0;}
+  h3 {font-size: 1.8rem; line-height: 1.24; margin: .8rem 0; font-weight: 500;}
   div, span, p, a, ul, ol, q, blockquote {
     font-size: 1.6rem;
     line-height: 1.6;
+    color: $black;
   }
   h1, h2 {max-width: 30ch;}
   span, p, a, ul, ol, q, blockquote {
     max-width: 45ch;
-    margin: 1.8rem 0;
+    margin: 1.5rem 0;
   }
   li, a {
     overflow-wrap: break-word;
@@ -42,7 +46,7 @@ h1, h2, h3 {
       h1 {font-size: 3.2rem}
       h2 {font-size: 2.8rem}
       div, span, p, a, ul, ol, q, blockquote {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
       }
       span, p, a, ul, ol, q, blockquote {
         max-width: 100%;
@@ -53,13 +57,130 @@ h1, h2, h3 {
       
   }
   
-  @media #{$mq-xlarge} {
-    h1 {font-size: 4.2rem}
-    h2 {font-size: 3.6rem}
-    div, span, p, a, ul, ol, q, blockquote {
-      font-size: 2.4rem;
+  // @media #{$mq-xlarge} {
+  //   h1 {font-size: 4.2rem}
+  //   h2 {font-size: 3.6rem}
+  //   div, span, p, a, ul, ol, q, blockquote {
+  //     font-size: 2.4rem;
+  //   }
+  //   span, p, a, ul, ol, q, blockquote {
+  //     max-width: 100%;
+  //   }       
+  // }
+  
+  main {
+    // position: absolute;
+    // top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    min-height: 50rem; //debug
+    @media #{$mq-xsmall} {
+      top: $mobile_nav_height;
     }
-    span, p, a, ul, ol, q, blockquote {
-      max-width: 100%;
-    }       
+    @media #{$mq-small} {
+      margin-top: $desktop_nav_height;
+    }
   }
+
+  
+
+  // UI components
+
+.action_btn {
+  background: $blue;
+  color: #fff;
+  text-decoration: none;
+  padding: .8rem 1.5rem;
+  transition: 150ms ease-in;
+  @media #{$mq-xsmall} {
+    width: 100%;
+    text-align: center;
+    padding: 1.2rem 1.5rem;
+  }
+}
+.action_btn:hover, .action_btn:active {
+  background: lighten($blue, 10%);
+}
+.action_btn:active {
+  transform: scale(.92);
+}
+.link_dotted {
+  color: $dark_blue;
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: .25rem dashed #999;
+  font-size: 2.1rem;
+  @media #{$mq-xsmall} {
+    font-size: 1.8rem;
+  }
+}
+
+
+// control dots in react-responsive-carousel
+.control-dots {
+  padding: 1.5rem 0 0 0 !important;
+  margin:  0 !important;
+  @media #{$mq-xsmall} {
+    display: none !important;
+  }
+  @media #{$mq-small} {
+    display: none !important;
+  }
+  @media #{$mq-medium} {
+    display: block !important;
+  }
+}
+.control-prev.control-arrow::before {
+  border-right: .8rem solid #999 !important;
+} 
+.control-next.control-arrow::before {
+  border-left: .8rem solid #999 !important;
+}
+.dot, .control-dots .selected {
+  box-shadow: 1px 1px .5rem rgba(0,0,0,.25);
+}
+
+.dot {
+  // box-shadow: 1px 1px .5rem rgba(0,0,0,.25);
+  background: rgba(0,0,0,.5);
+  // border: 1px solid red !important;
+}
+
+.axis-vertical {
+  display: none;
+  // border: 1px solid red !important;
+}
+
+// CSS arrows
+.arrow {
+  border: solid #999;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.arrow_right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.arrow_left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+.arrow_up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
+.arrow_down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+.fb_dialog.fb_dialog_advanced iframe {
+  bottom: 0 !important;
+}

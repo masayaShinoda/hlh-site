@@ -3,6 +3,17 @@
 $head: 'Roboto', sans-serif;
 $body: 'Nunito', sans-serif;
 
+$black: #222;
+$dark_blue: #000033;
+$blue: #342C9B;
+$red: #F3111A;
+$snow: #F9F9F9;
+
+$blue_css_filter: invert(11%) sepia(74%) saturate(4901%) hue-rotate(246deg) brightness(90%) contrast(89%);
+$red_css_filter: invert(13%) sepia(92%) saturate(7048%) hue-rotate(354deg) brightness(99%) contrast(93%);
+$dark_blue_css_filter: invert(7%) sepia(30%) saturate(6676%) hue-rotate(233deg) brightness(82%) contrast(119%);
+$black_222_css_filter: invert(16%) sepia(39%) saturate(0%) hue-rotate(161deg) brightness(115%) contrast(123%);
+
 // Breakpoints
 $bp-xsmall: 40em; // 640px
 $bp-small: 48em; // 768px
@@ -18,3 +29,23 @@ $mq-medium: "(min-width: #{$bp-medium})";
 $mq-large: "(min-width: #{$bp-large})";
 $mq-xlarge: "(min-width: #{$bp-xlarge})";
 $mq-xxlarge: "(min-width: #{$bp-xxlarge})";
+
+$content-padding-mobile: 10% 5%;
+$max-content-tablet: 72rem;
+$content-padding-tablet: 1rem;
+$max-content-desktop: 118rem;
+$content-padding-desktop: 2rem;
+
+// nav
+$mobile_nav_height: 8.5rem;
+$desktop_nav_height: 11rem;
+$desktop_nav_height_mini: 5.4rem;
+
+$desktop_nav_padding: 3.25rem 0 1.25rem 0;
+$desktop_nav_content_padding: 0 5%;
+
+:export {
+    blue_css_filter: $blue_css_filter;
+    blue: $blue;
+    dark_blue: $dark_blue;
+}

@@ -1,0 +1,111 @@
+@import './_variables';
+
+.footer_container {
+    border-top: .4rem solid $red;
+    padding: 2.5rem 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 5rem;
+    // position: absolute;
+    // bottom: 0;
+
+    .footer_content {
+        display: flex;        
+        margin: 0 auto;
+        padding: 0 2rem;
+        width: 100%; height: 100%;
+        // border: 1px solid red; //debug
+
+        @media #{$mq-xsmall} {
+            padding: 5%;
+            flex-direction: column;
+        }
+        @media #{$mq-small} {
+            // padding: $content-padding-tablet;
+            max-width: $max-content-tablet;            
+        }
+        @media #{$mq-medium} {
+            // padding: $content-padding-desktop;
+            max-width: $max-content-desktop;
+        }
+
+        h3 {
+            font-family: $body;
+            font-weight: 400;
+            font-size: 2.4rem;
+            padding: 0 0 1rem 0;
+            border-bottom: 1px solid #bbb;
+            width: 100%;
+            color: #333;
+        }
+
+        > div {
+            display: flex; flex-direction: column;
+            align-items: flex-start;
+            padding: 0 5rem 0 0;
+            // width: 100%;
+            // border: 1px solid green; //debug
+            @media #{$mq-xsmall} {
+                padding: 0;
+            }
+
+            ul {
+                margin: 0;
+                list-style: none;
+                padding: 0;
+                
+            }
+            a {
+                text-decoration: none;
+                display: flex;
+                margin: 1rem 0;
+            }
+            a:hover, a:active {
+                color: $blue;
+            }
+        }
+    }
+
+}
+.copyright_container {
+    display: flex;
+    width: 100%;
+    background: $blue;
+    color: #fff;
+    // border: 1px solid red; //debug
+
+    @media #{$mq-xsmall} {
+        padding: .65rem 5%;
+    }
+    @media #{$mq-small} {
+        padding: .8rem 0;
+    }
+    
+    p {
+        display: flex;
+        width: 100%;
+        font-size: 1.4rem;
+        margin: 0 auto;
+        color: #ececec;
+        // border: 1px solid green; //debug
+        @media #{$mq-xsmall} {
+            font-size: 1.2rem;
+        }
+        @media #{$mq-small} {
+            max-width: $max-content-tablet;
+            padding: 0 2rem;
+
+        }
+        @media #{$mq-medium} {
+            max-width: $max-content-desktop;
+        }
+    }
+}
+
+.footer_icon {
+    filter: $black_222_css_filter;
+    display: flex;
+    padding-right: .75rem;
+    // border: 2px solid purple; //debug
+}
