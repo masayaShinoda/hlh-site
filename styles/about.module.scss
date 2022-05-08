@@ -50,6 +50,19 @@
         // }
     }
 
+    .brands_container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 5% 0;
+        @media #{$mq-xsmall} {
+            padding: 10% 0;
+        }
+        h2 {
+            font-size: 2.1rem;
+
+        }
+    }
 
     .brand_logos_grid {
         display: flex;
@@ -59,7 +72,7 @@
         width: 100%;
         max-width: 100%;
         height: 100%;
-        padding: 5% 0;
+        padding: 2.5% 0;
         // border: 2px solid red; //debug
 
         @media #{$mq-xsmall} {
@@ -69,12 +82,10 @@
         }
 
         img {
-            height: 6rem;
-            width: 8rem;
-            max-height: 6rem;
-            max-width: 8rem;
+            width: 12rem; max-width: 12rem;
+            height: 9rem; max-height: 9rem;
             object-fit: contain;
-            margin: 1rem 0;
+            margin: 1rem 2rem;
             padding: 0;
             // margin: 1rem 2.5rem;
             // outline: 1px solid blue; //debug

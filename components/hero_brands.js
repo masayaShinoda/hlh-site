@@ -42,7 +42,7 @@ export default function HeroBrands({ data }) {
             <div
             style={{display: "flex", justifyContent: "center", width: "100%", padding: "1.5rem 0"}}
             >
-                <Link href="/">
+                <Link href="/about#available_brands">
                     <a
                     className="link_dotted">
                     See all available brands</a>

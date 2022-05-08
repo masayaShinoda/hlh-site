@@ -33,8 +33,11 @@ function About({ aboutData }) {
                 alt="HLH cover photo with car part companies' brand logos."
                 className={styles.aboutCoverPhoto}
                 /> */}
-                <div className={styles.brand_logos_grid}>
-                    {brands && brands.map(i => <img src={i.brandLogo.url} alt={i.brandName} key={i.id} loading="lazy" />)}
+                <div className={styles.brands_container} id="available_brands">
+                    <h2 style={{margin: `0`}}>Available Brands</h2>
+                    <div className={styles.brand_logos_grid}>
+                        {brands && brands.map(i => <img src={i.brandLogo.url} alt={i.brandName} key={i.id} loading="lazy" />)}
+                    </div>
                 </div>
             </div>
         </div>
