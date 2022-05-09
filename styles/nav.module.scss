@@ -1,0 +1,245 @@
+@import './_variables.scss';
+@import 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css';
+
+
+.nav_container {
+    display: flex; justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    
+    height: $desktop_nav_height;
+    max-height: $desktop_nav_height;
+    padding: $desktop_nav_padding;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    position: fixed;
+    top: 0;
+    z-index: 50;
+    // border: 1px solid red; //debug
+    @media #{$mq-xsmall} {
+        display: none;
+    }
+    
+    .nav_content {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding: 0 2rem;
+        width: 100%;
+        height: 100%;
+        position: inherit;
+        // border: 1px solid green; //debug
+        
+        @media #{$mq-xsmall} {
+            display: none;
+        }
+        @media #{$mq-small} {
+            max-width: $max-content-tablet;
+        }
+        @media #{$mq-medium} {
+            max-width: $max-content-desktop;
+        }
+
+        a {
+            margin: 0;
+        }
+        
+        .logo_container {
+            display: flex;
+
+            @media #{$mq-small} {
+                max-width: 18rem;
+            }
+            @media #{$mq-medium} {
+                max-width: 25rem;
+            }
+
+            .nav_logo {
+                margin: 0 !important;  
+                @media #{$mq-small} {
+                    min-width: 6.5rem !important;
+                    width: 6.5rem !important;
+                    max-width: 6.5rem !important;
+                }
+                @media #{$mq-medium} {
+                }
+
+            }
+            a {
+                display: inline-flex; align-items: center;
+                text-decoration: none; color: #000;
+            }
+            span { //logo text
+                display: inline;
+                margin: 0;
+                @media #{$mq-small} {
+                    font-size: 1.2rem;
+                    margin-left: .5rem;
+                }
+                @media #{$mq-medium} {
+                    font-size: 1.6rem;
+                    margin-left: 1.5rem;
+                }
+                font-family: 'Helvetica', sans-serif;
+                text-transform: uppercase;
+                font-weight: 700;
+                line-height: 1.4;
+            }
+        }
+
+        nav {
+            display: inline-flex;
+            // height: 100%;
+            align-items: flex-end;
+            // border: 1px solid green; //debug
+            a {
+                display: flex; align-items: flex-start;
+                font-weight: 700;
+                line-height: 1;
+                text-decoration: none;
+                margin: 0;
+                color: #000;
+                transition: .2s ease-in;
+                @media #{$mq-small} {
+                    padding: 0 1rem;
+                    font-size: 1.6rem;
+                }
+                @media #{$mq-medium} {
+                    padding: 0 1.2rem;
+                    font-size: 1.8rem;
+                }
+
+                > span {
+                    margin-right: .8rem !important;
+                }
+                .nav_icon {
+                    // icons
+                    // border: 1px solid red !important;
+                    margin: 0 !important;
+                    margin-right: 1rem !important;
+                    filter: brightness(0) saturate(100%) !important;
+                }
+            }
+            a:hover, a.active {
+                color: $blue;
+                .nav_icon {
+                    filter: invert(11%) sepia(74%) saturate(4901%) hue-rotate(246deg) brightness(90%) contrast(89%) !important;
+                }
+            }
+            
+            
+        }
+    }    
+}
+
+.mobile_nav {
+    position: fixed;
+    max-height: $mobile_nav_height;
+    padding: 2.5rem 0;
+    border-bottom: 1px solid #ddd;
+    background: #fff;
+    z-index: 49;
+    a {
+        margin: 0 !important;
+    }
+    @media #{$mq-xsmall} {
+        display: flex;
+        width: 100%;
+        // border: 1px solid red; //debug
+    }
+    @media #{$mq-small} {
+        display: none;
+    }
+
+    justify-content: space-between;
+    
+    .mobile_logo_container {
+        display: flex;
+        align-items: center;
+        // padding: 0 0 .8rem 0;
+        cursor: pointer;
+        // border: 1px solid green; //debug
+    }
+    .mobile_logo_container:active {
+        transform: scale(.92);
+    }
+
+    .mobile_nav_btn {
+        display: flex; align-items: center; justify-content: center;
+        // height: $mobile_nav_height;
+        width: calc($mobile_nav_height / 1.5);
+        background: 0;
+        padding: .5rem;
+        // border: 1px solid blue; //debug
+        filter: $blue_css_filter !important;
+        cursor: pointer;
+    }
+    .mobile_nav_btn:active {
+        transform: scale(.92);
+    }
+}
+
+.mobile_nav_expanded {
+    display: none; flex-direction: column;
+    align-items: center; justify-content: center;
+    background: $blue;
+    z-index: 50;
+    top: 0; bottom: 0;
+    left: 0;
+    position: fixed;
+    width: 0%; height: 100% !important;
+    animation-name: expand_nav;
+    animation-fill-mode: forwards;
+    animation-duration: 250ms;
+
+    @keyframes expand_nav {
+        0% {width: 0;}
+        100% {width: 100%;}
+    }
+
+    .mobile_close_btn {
+        background: 0;
+        position: fixed;
+        top: 1.5%;
+        left: 0;
+        padding: 2.5rem;
+        filter: brightness(1) invert(1);
+        cursor: pointer;
+        // border: 1px solid red; //debug
+    }
+    .mobile_close_btn:active {
+        transform: scale(.92);
+    }
+    
+    nav {width: 100%;}
+    nav a {
+        color: #fff;
+        display: inline-flex; justify-content: center; align-items: center;
+        font-weight: 600;
+        line-height: 1;
+        width: 100%;
+        text-decoration: none;
+        margin: 0;
+        font-size: 2.8rem;
+        padding: 2.5rem 0;
+        margin: 1rem 0;
+    }
+    nav a:active {
+        transform: scale(.92);
+    }
+
+    @media #{$mq-small} {
+        display: none !important;
+    }
+}
+
+
+// Export the color palette to make it accessible to JS
+:export {
+    blue_css_filter: $blue_css_filter;
+    blue: $blue;
+    dark_blue: $dark_blue;
+    desktop_nav_height: $desktop_nav_height;
+    desktop_nav_height_mini: $desktop_nav_height_mini;
+    desktop_nav_padding: $desktop_nav_padding;
+}
