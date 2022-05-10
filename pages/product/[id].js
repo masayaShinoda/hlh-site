@@ -21,7 +21,7 @@ function Product({ productData }) {
     }
     const currency = "$"
 
-    return <Layout>
+    return <Layout activePage={"products"} page_title={product_data && product_data.name}>
         <div className={styles.product_page_container}>
             <div className={styles.product_page_content}>
             {product_data && <div className={styles.product_details}>
