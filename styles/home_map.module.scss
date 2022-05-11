@@ -78,6 +78,8 @@
 }
 .map_embed {
     @media #{$mq-xsmall} {
+
+        width: 100% !important;
         max-width: 100% !important;
         // border: 1px solid red !important; //debug
     }
