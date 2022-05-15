@@ -2,6 +2,7 @@ import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import Layout from '../components/layout'
+import Search from '../components/search'
 import styles from '../styles/products.module.scss'
 
 function Products({ productsData }) {
@@ -49,8 +50,9 @@ function Products({ productsData }) {
         <div className={styles.products_page_content}>
             <div className={styles.categ_upper_section}>
                 <h1>Products</h1>
-                <label>Select product category to display.</label>
             </div>
+            <Search productsData={productsData} />
+            <label>Select product category to display.</label>
             <div className={styles.categ_radio_section}>
             {productsData.data.allProductCategories ? 
             productsData.data.allProductCategories.map((i, order) => 

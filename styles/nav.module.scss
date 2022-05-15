@@ -197,17 +197,18 @@
         100% {width: 100%;}
     }
 
-    .mobile_close_btn {
+    .mobile_close_btn, .mobile_search_btn {
         background: 0;
         position: fixed;
         top: 1.5%;
-        left: 0;
         padding: 2.5rem;
         filter: brightness(1) invert(1);
         cursor: pointer;
         // border: 1px solid red; //debug
     }
-    .mobile_close_btn:active {
+    .mobile_close_btn {left: 0;}
+    .mobile_search_btn {right: 0;}
+    .mobile_close_btn:active, .mobile_search_btn:active {
         transform: scale(.92);
     }
     

@@ -139,6 +139,16 @@ export default function Nav({ activePage }) {
                     About
                 </a>
                 </Link>
+                <Link href="/search">
+                <a className={activePage === "products" ? styles.active : null} tabIndex={5}>
+                    <Image
+                    src={icons.search}
+                    width="16" height="16"
+                    alt="About icon"
+                    className={styles.nav_icon}
+                    />
+                </a>
+                </Link>
             </nav>
         </div>
     </div>
@@ -173,16 +183,18 @@ export default function Nav({ activePage }) {
                 />
             </Link>
         </div>
-        <button
-        aria-label="Search"
-        className={styles.mobile_nav_btn}
-        style={{opacity: 0}}>
-            <Image 
-            src={icons.search}
-            alt="Search"
-            width="24" height="24"
-            />
-        </button>
+        <Link href="/search">
+            <button
+            aria-label="Search"
+            className={styles.mobile_nav_btn}
+            >
+                <Image 
+                src={icons.search}
+                alt="Search"
+                width="24" height="24"
+                />
+            </button>
+        </Link>
 
     </div>
     <div
@@ -200,7 +212,19 @@ export default function Nav({ activePage }) {
             width="24" height="24"
             />
         </button>
-        <nav>
+        <Link href="/search">
+            <button
+            aria-label="Search"
+            className={styles.mobile_search_btn}
+            onClick={() => setMenu(!menu)}>
+                <Image 
+                src={icons.search}
+                alt="Close"
+                width="24" height="24"
+                />
+            </button>
+        </Link>
+        <nav onClick={() => setMenu(!menu)}>
             <Link href="/products">
                 Products
             </Link>

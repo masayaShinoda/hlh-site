@@ -1,0 +1,109 @@
+@import './_variables.scss';
+
+.search_page_container {
+    display: flex; flex-direction: column;
+    width: 100%;
+    padding: 2.5rem 0;
+    @media #{$mq-xsmall} {
+        margin-top: 10rem;
+    }
+
+    .search_page_content {
+        width: 100%;
+        margin: 0 auto;
+        
+        @media #{$mq-xsmall} {
+            padding: 5%;
+        }
+        @media #{$mq-small} {
+            // padding: $content-padding-tablet;
+            max-width: $max-content-tablet;
+            padding: 5rem 2rem;
+        }
+        @media #{$mq-medium} {
+            // padding: $content-padding-desktop;
+            max-width: $max-content-desktop;
+        }
+
+        
+        
+    }
+}
+
+.search_input_container {
+    padding: 2.5rem 0;
+
+    > button {
+        // clear search button
+        display: flex; justify-content: center;
+        width: 100%;
+        cursor: pointer;
+        padding: .8rem 0;
+        p {
+            font-size: 90%;
+            line-height: 1;
+            margin: 0;
+        }
+    }
+    > button:hover {
+        p {color: $red;}
+    }
+}
+
+.search_input {
+    display: flex;
+    width: 100%;
+    padding: 1rem 1.8rem;
+    // border-radius: .5rem;
+    border-bottom: .25rem solid #ccc;
+    transition: border 200ms ease-in;
+    // outline: 2px solid #ccc;
+}
+.search_input:hover, .search_input:focus {
+    border-bottom: .25rem solid $blue;
+}
+.search_input:focus {
+    outline: 2px solid transparentize($blue, .8);
+}
+
+.search_result_list {
+    list-style-type: none;
+
+    background: $snow;
+    padding: 0;
+    margin: 0;
+    position: abolute;
+    left: 0; right: 0;
+    width: 100%;
+    max-width: 100%;
+    max-height: 40rem;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    z-index: 50;
+    
+    li {
+        padding: 1rem 1.8rem;
+        border-bottom: 1px solid #ececec;
+        a, p {
+            margin: 0; padding: 0;
+            text-decoration: none;
+            color: $dark_blue;
+        }
+        .search_result_name {
+            margin-bottom: .325rem;
+        }
+        .search_result_categ {
+            font-size: 80%;
+            color: #666;
+        }
+    }
+    li:hover {
+        cursor: pointer;
+        background: #ececec;
+    }
+
+}
+
+.search_component_container {
+    margin-bottom: 2.5rem;
+}

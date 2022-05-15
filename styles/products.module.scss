@@ -31,24 +31,29 @@
             align-items: flex-end;
             width: 100%;
 
-            > label {
-                color: #666;
-                line-height: 1;
-                font-size: 1.24rem;
-            }
+
             @media #{$mq-xsmall} {
                 flex-direction: column;
                 align-items: flex-start;
 
             }
         }
+
+        > label {
+            color: #666;
+            line-height: 1;
+            font-size: 1.24rem;
+            // padding: 5rem 0 0 0;
+        }
+
         .categ_radio_section {
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
             width: 100%;
-            padding: 2.5% 0;
+            padding: 1.5rem 0;
             @media #{$mq-xsmall} {padding: 7.5% 0}
+
             .radio_option_display {
                 display: flex; align-items: center; justify-content: flex-start;
                 width: 30%; max-width: 30%;
