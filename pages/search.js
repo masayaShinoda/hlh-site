@@ -9,7 +9,7 @@ function SearchPage({ productsData }) {
     const [searchString, setSearchString] = useState("")
     // const [searchResult, setSearchResult] = useState([])
 
-    return <Layout activePage={"products"} page_title={"Search"}>
+    return <Layout activePage={"search"} page_title={"Search"}>
     <div className={styles.search_page_container}>
         <div className={styles.search_page_content}>
             <h2>Search Products</h2>

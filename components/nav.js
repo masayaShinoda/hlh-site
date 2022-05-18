@@ -140,7 +140,7 @@ export default function Nav({ activePage }) {
                 </a>
                 </Link>
                 <Link href="/search">
-                <a className={activePage === "products" ? styles.active : null} tabIndex={5}>
+                <a className={activePage === "search" ? styles.active : null} tabIndex={5}>
                     <Image
                     src={icons.search}
                     width="16" height="16"
