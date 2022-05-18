@@ -19,7 +19,7 @@ export default function Categories({ data }) {
                 className={styles.box_category}
                 >
                     {i.thumbnail ? 
-                    <img src={i.url} alt={i.category + " thumbnail"} /> 
+                    <img src={i.thumbnail.url} alt={i.category + " thumbnail"} /> 
                     : <img src={thumbnail_alt} alt="Thumbnail unavailable." />}
                     <div className={styles.title_third}>
                         {i.icon ? 
