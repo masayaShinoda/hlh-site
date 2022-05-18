@@ -36,7 +36,11 @@ function About({ aboutData }) {
                 <div className={styles.brands_container} id="available_brands">
                     <h2 style={{margin: `0`}}>Available Brands</h2>
                     <div className={styles.brand_logos_grid}>
-                        {brands && brands.map(i => <img src={i.brandLogo.url} alt={i.brandName} key={i.id} loading="lazy" />)}
+                        {brands && brands.map(i => {
+                            if (i.available) {
+                            return <img src={i.brandLogo.url} alt={i.brandName} key={i.id} loading="lazy" /> 
+                            }
+                            })}
                     </div>
                 </div>
             </div>
@@ -70,6 +74,7 @@ export async function getStaticProps() {
                     brandLogo {
                       url
                     }
+                    available
                 }
             }`
           }),
