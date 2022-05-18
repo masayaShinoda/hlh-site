@@ -25,12 +25,14 @@ export default function HeroBrands({ data }) {
                 <div 
                 id="brands_slideshow"
                 className={styles.brands_slideshow}>
-                {data && data.map(i => 
-                    <img
-                    loading="lazy"
-                    key={i.id}
-                    src={i.brandLogo.url} alt={i.brandName}
-                    className={" animate__animated animate__slideInRight animate__delay-2s"} />
+                {data && data.map(i => {
+                    if (i.available) {
+                        return <img
+                        loading="lazy"
+                        key={i.id}
+                        src={i.brandLogo.url} alt={i.brandName}
+                        className={" animate__animated animate__slideInRight animate__delay-2s"} />
+                    }}
                 )}
                 </div>
                 <button 

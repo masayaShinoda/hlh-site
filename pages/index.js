@@ -49,6 +49,7 @@ export async function getStaticProps() {
             }
             allProductBrands {
               id
+              available
               brandName
               brandLogo {
                 url
