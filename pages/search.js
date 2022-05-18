@@ -6,7 +6,7 @@ import styles from '../styles/search.module.scss'
 
 function SearchPage({ productsData }) {
 
-    const [searchString, setSearchString] = useState("")
+    // const [searchString, setSearchString] = useState("")
     // const [searchResult, setSearchResult] = useState([])
 
     return <Layout activePage={"search"} page_title={"Search"}>
