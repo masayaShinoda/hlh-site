@@ -76,7 +76,6 @@ export async function getStaticProps() {
                 contactInformation {
                     location
                     mobile
-                    mobileAdditional
                     telephone
                     pageName
                     link
