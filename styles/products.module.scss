@@ -143,7 +143,8 @@
         // border: 1px solid red; //debug
 
         .products_listing_grid {
-            display: flex; justify-content: space-between;
+            display: flex; justify-content: flex-start;
+            flex-direction: row;
             
             width: 100%;
             flex-wrap: wrap;
@@ -157,7 +158,9 @@
                 // box-shadow: 0 .1rem .25rem .005rem rgba(0, 0, 0, 0.15);
                 margin: 0;
                 margin-bottom: 3.25rem;
+                margin-right: 2.5rem;
                 text-decoration: none;
+                
                 // border: 1px solid blue; //debug
                 @media #{$mq-xsmall} {
                     min-width: 48%;
