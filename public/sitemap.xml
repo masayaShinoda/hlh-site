@@ -9,57 +9,62 @@
 
 <url>
   <loc>https://www.hlhparts.com/</loc>
-  <lastmod>2022-05-08T08:13:24+00:00</lastmod>
+  <lastmod>2022-05-23T07:04:40+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://www.hlhparts.com/products</loc>
-  <lastmod>2022-05-08T08:13:24+00:00</lastmod>
+  <lastmod>2022-05-23T07:04:40+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.hlhparts.com/contact</loc>
-  <lastmod>2022-05-08T08:13:24+00:00</lastmod>
+  <lastmod>2022-05-23T07:04:40+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.hlhparts.com/about</loc>
-  <lastmod>2022-05-08T08:13:24+00:00</lastmod>
+  <lastmod>2022-05-23T07:04:40+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.hlhparts.com/search</loc>
+  <lastmod>2022-05-23T07:04:40+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.hlhparts.com/products?category=Engine</loc>
-  <lastmod>2022-05-08T08:13:24+00:00</lastmod>
+  <lastmod>2022-05-23T07:04:40+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.hlhparts.com/products?category=Brakes</loc>
-  <lastmod>2022-05-08T08:13:24+00:00</lastmod>
+  <lastmod>2022-05-23T07:04:40+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.hlhparts.com/products?category=A%2FC</loc>
-  <lastmod>2022-05-08T08:13:24+00:00</lastmod>
+  <lastmod>2022-05-23T07:04:40+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.hlhparts.com/products?category=Electrical</loc>
-  <lastmod>2022-05-08T08:13:24+00:00</lastmod>
+  <lastmod>2022-05-23T07:04:40+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.hlhparts.com/products?category=Suspension+%26+Steering</loc>
-  <lastmod>2022-05-08T08:13:24+00:00</lastmod>
+  <lastmod>2022-05-23T07:04:40+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.hlhparts.com/products?category=Oils+%26+Fluid</loc>
-  <lastmod>2022-05-08T08:13:24+00:00</lastmod>
+  <lastmod>2022-05-23T07:04:40+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.hlhparts.com/products?category=Other</loc>
-  <lastmod>2022-05-08T08:13:24+00:00</lastmod>
+  <lastmod>2022-05-23T07:04:40+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 
