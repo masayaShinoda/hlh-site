@@ -1,7 +1,7 @@
 import { NextSeo } from 'next-seo'
 
 export default function LayoutHead({page_title}) {
-    const siteName = "HLH Auto Parts"
+    const siteName = "Hong Ly Heng Auto Parts"
     const siteDesc = "Your best automotive parts provider, we cater quality products from Japan, Germany, UK, USA and more."
 
     const favIcons = [
@@ -29,7 +29,7 @@ export default function LayoutHead({page_title}) {
     const openGraphMeta = {
         type: 'website',
         // url: 'https://zillionunited.io',
-        title: 'HLH Auto',
+        title: 'Hong Ly Heng Auto Parts',
         description: siteDesc,
         images: [{
             url: '/images/HLH-cover_google-business-size.jpg',
